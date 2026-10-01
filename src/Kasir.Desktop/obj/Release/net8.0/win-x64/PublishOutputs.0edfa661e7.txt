@@ -1,0 +1,10 @@
+C:\Local Disk D\koding\kasir\publish\win-x64-single\Kasir.Desktop.pdb
+C:\Local Disk D\koding\kasir\publish\win-x64-single\av_libglesv2.dll
+C:\Local Disk D\koding\kasir\publish\win-x64-single\libHarfBuzzSharp.dll
+C:\Local Disk D\koding\kasir\publish\win-x64-single\libHarfBuzzSharp.pdb
+C:\Local Disk D\koding\kasir\publish\win-x64-single\libSkiaSharp.dll
+C:\Local Disk D\koding\kasir\publish\win-x64-single\libSkiaSharp.pdb
+C:\Local Disk D\koding\kasir\publish\win-x64-single\e_sqlite3.dll
+C:\Local Disk D\koding\kasir\publish\win-x64-single\Kasir.Core.pdb
+C:\Local Disk D\koding\kasir\publish\win-x64-single\Kasir.Data.pdb
+C:\Local Disk D\koding\kasir\publish\win-x64-single\Kasir.Desktop.exe

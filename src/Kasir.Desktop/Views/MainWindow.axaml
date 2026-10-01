@@ -1,0 +1,156 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:vm="using:Kasir.Desktop.ViewModels"
+        xmlns:core="using:Kasir.Core"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d" d:DesignWidth="1200" d:DesignHeight="750"
+        x:Class="Kasir.Desktop.Views.MainWindow"
+        x:Name="Root"
+        x:DataType="vm:MainViewModel"
+        Icon="/Assets/avalonia-logo.ico"
+        Title="Cashier Exhaust"
+        Width="1200" Height="750"
+        MinWidth="1000" MinHeight="600">
+
+    <Design.DataContext>
+        <vm:MainViewModel />
+    </Design.DataContext>
+
+    <Grid RowDefinitions="Auto,*,Auto">
+        <Border Grid.Row="0" Padding="12,8" BorderThickness="0,0,0,1" BorderBrush="{DynamicResource BorderBrush}">
+            <Grid ColumnDefinitions="Auto,*,Auto">
+                <StackPanel Orientation="Horizontal" Spacing="8" VerticalAlignment="Center">
+                    <TextBlock Text="Cashier Exhaust" FontWeight="Bold" FontSize="16" />
+                    <TextBlock Text="TOKO UTAMA" FontSize="12" VerticalAlignment="Center" />
+                    <TextBlock Text="Lokal" FontSize="12" VerticalAlignment="Center" />
+                </StackPanel>
+                <StackPanel Grid.Column="2" Orientation="Horizontal" Spacing="8" VerticalAlignment="Center">
+                    <TextBlock Text="POS" FontWeight="SemiBold" />
+                    <TextBlock Text="v0.1.0" FontSize="12" VerticalAlignment="Center" />
+                </StackPanel>
+            </Grid>
+        </Border>
+
+        <Grid Grid.Row="1" ColumnDefinitions="340,*,300">
+            <Border Grid.Column="0" Padding="12" BorderThickness="0,0,1,0" BorderBrush="{DynamicResource BorderBrush}">
+                <StackPanel Spacing="8">
+                    <TextBlock Text="Scan / Cari" FontWeight="SemiBold" />
+                    <Grid ColumnDefinitions="*,Auto">
+                        <TextBox Grid.Column="0" x:Name="BarcodeBox"
+                                 Text="{Binding BarcodeInput, Mode=TwoWay}"
+                                 PlaceholderText="Scan barcode lalu Enter"
+                                 KeyDown="BarcodeBox_KeyDown" />
+                        <Button Grid.Column="1" Margin="8,0,0,0" Content="Tambah"
+                                Command="{Binding AddByBarcodeCommand}" />
+                    </Grid>
+                    <TextBox Text="{Binding SearchText, Mode=TwoWay}"
+                             PlaceholderText="Cari nama atau barcode" />
+                    <TextBlock Text="Produk" FontWeight="SemiBold" />
+                    <ListBox ItemsSource="{Binding Products}" Height="460">
+                        <ListBox.DataTemplates>
+                            <DataTemplate x:DataType="core:Product">
+                                <StackPanel Spacing="2" Margin="0,4">
+                                    <TextBlock Text="{Binding Name}" FontWeight="SemiBold" TextWrapping="Wrap" />
+                                    <TextBlock FontSize="12">
+                                        <Run Text="{Binding Barcode}" />
+                                        <Run Text=" | Rp " />
+                                        <Run Text="{Binding SellPrice}" />
+                                        <Run Text=" | Stok " />
+                                        <Run Text="{Binding Stock}" />
+                                    </TextBlock>
+                                    <Button Content="Tambah"
+                                            Command="{Binding #Root.DataContext.AddProductCommand}"
+                                            CommandParameter="{Binding}" />
+                                </StackPanel>
+                            </DataTemplate>
+                        </ListBox.DataTemplates>
+                    </ListBox>
+                </StackPanel>
+            </Border>
+
+            <Border Grid.Column="1" Padding="12">
+                <Grid RowDefinitions="Auto,*,Auto">
+                    <Grid Grid.Row="0" ColumnDefinitions="*,Auto">
+                        <TextBlock Text="Keranjang" FontWeight="SemiBold" FontSize="14" VerticalAlignment="Center" />
+                        <Button Grid.Column="1" Content="Bersihkan" Classes="secondary"
+                                Command="{Binding ClearCartCommand}" />
+                    </Grid>
+                    <ListBox Grid.Row="1" ItemsSource="{Binding Cart}" Margin="0,8">
+                        <ListBox.DataTemplates>
+                            <DataTemplate x:DataType="vm:CartLine">
+                                <Grid ColumnDefinitions="*,Auto" Margin="0,4">
+                                    <StackPanel Spacing="2">
+                                        <TextBlock Text="{Binding Name}" FontWeight="SemiBold" TextWrapping="Wrap" />
+                                        <TextBlock FontSize="12">
+                                            <Run Text="Rp " />
+                                            <Run Text="{Binding Price}" />
+                                            <Run Text=" x " />
+                                            <Run Text="{Binding Qty}" />
+                                            <Run Text=" = Rp " />
+                                            <Run Text="{Binding Subtotal}" />
+                                        </TextBlock>
+                                    </StackPanel>
+                                    <StackPanel Grid.Column="1" Orientation="Horizontal" Spacing="4" VerticalAlignment="Center">
+                                        <Button Content="-"
+                                                Command="{Binding #Root.DataContext.DecCommand}"
+                                                CommandParameter="{Binding}" />
+                                        <Button Content="+"
+                                                Command="{Binding #Root.DataContext.IncCommand}"
+                                                CommandParameter="{Binding}" />
+                                        <Button Content="Hapus"
+                                                Command="{Binding #Root.DataContext.RemoveLineCommand}"
+                                                CommandParameter="{Binding}" />
+                                    </StackPanel>
+                                </Grid>
+                            </DataTemplate>
+                        </ListBox.DataTemplates>
+                    </ListBox>
+                    <Border Grid.Row="2" Padding="12" CornerRadius="10" BorderThickness="1" BorderBrush="{DynamicResource BorderBrush}">
+                        <Grid ColumnDefinitions="Auto,*" RowDefinitions="Auto,Auto,Auto">
+                            <TextBlock Text="Total" FontSize="12" />
+                            <TextBlock Grid.Column="1" Text="{Binding Total, StringFormat='Rp {0:N0}'}"
+                                       FontSize="32" FontWeight="Bold" HorizontalAlignment="Right" />
+                            <TextBlock Grid.Row="1" Text="Kembalian" FontSize="12" VerticalAlignment="Center" />
+                            <TextBlock Grid.Row="1" Grid.Column="1"
+                                       Text="{Binding Change, StringFormat='Rp {0:N0}'}"
+                                       FontSize="20" FontWeight="Bold" HorizontalAlignment="Right" />
+                            <TextBlock Grid.Row="2" Text="{Binding StatusMessage}" FontSize="12" TextWrapping="Wrap" />
+                        </Grid>
+                    </Border>
+                </Grid>
+            </Border>
+
+            <Border Grid.Column="2" Padding="12" BorderThickness="1,0,0,0" BorderBrush="{DynamicResource BorderBrush}">
+                <StackPanel Spacing="8">
+                    <TextBlock Text="Bayar" FontWeight="SemiBold" />
+                    <TextBlock Text="Total" FontSize="12" />
+                    <TextBlock Text="{Binding Total, StringFormat='Rp {0:N0}'}"
+                               FontSize="28" FontWeight="Bold" />
+                    <TextBlock Text="Tunai" FontSize="12" />
+                    <NumericUpDown Value="{Binding PaidAmount}" Minimum="0" Increment="500" FormatString="N0" />
+                    <WrapPanel>
+                        <Button Content="Uang Pas" Margin="0,0,4,4"
+                                Command="{Binding SetExactPaymentCommand}" />
+                    </WrapPanel>
+                    <TextBlock Text="Kembalian" FontSize="12" />
+                    <TextBlock Text="{Binding Change, StringFormat='Rp {0:N0}'}"
+                               FontSize="24" FontWeight="Bold" />
+                    <Button Content="Bayar [F5]" Classes="primary" Command="{Binding CheckoutCommand}"
+                            HorizontalAlignment="Stretch" HorizontalContentAlignment="Center" />
+                    <Button Content="Bersihkan" Classes="secondary" Command="{Binding ClearCartCommand}"
+                            HorizontalAlignment="Stretch" HorizontalContentAlignment="Center" />
+                    <TextBlock Text="Fase 0: tunai saja. NON TUNAI, diskon, dan pajak masuk Fase 7."
+                               FontSize="11" TextWrapping="Wrap" />
+                </StackPanel>
+            </Border>
+        </Grid>
+
+        <Border Grid.Row="2" Padding="12,6" BorderThickness="0,1,0,0" BorderBrush="{DynamicResource BorderBrush}">
+            <Grid ColumnDefinitions="*,Auto">
+                <TextBlock Text="{Binding StatusMessage}" FontSize="12" TextWrapping="Wrap" />
+                <TextBlock Grid.Column="1" Text="DB: lokal | Cashier Exhaust 0.1.0" FontSize="11" />
+            </Grid>
+        </Border>
+    </Grid>
+</Window>

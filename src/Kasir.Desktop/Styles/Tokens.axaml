@@ -1,0 +1,37 @@
+<ResourceDictionary xmlns="https://github.com/avaloniaui"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <!-- Kertas dan permukaan -->
+  <SolidColorBrush x:Key="PaperBrush" Color="#F6F4EE" />
+  <SolidColorBrush x:Key="SurfaceBrush" Color="#FFFFFF" />
+  <SolidColorBrush x:Key="Surface2Brush" Color="#EFECE3" />
+  <SolidColorBrush x:Key="BorderBrush" Color="#E2DCCD" />
+
+  <!-- Tinta -->
+  <SolidColorBrush x:Key="InkBrush" Color="#191817" />
+  <SolidColorBrush x:Key="Ink2Brush" Color="#6C6759" />
+  <SolidColorBrush x:Key="MutedBrush" Color="#A39D8D" />
+
+  <!-- Aksen kerja -->
+  <SolidColorBrush x:Key="AccentBrush" Color="#0E6F67" />
+  <SolidColorBrush x:Key="AccentHoverBrush" Color="#0B5D56" />
+  <SolidColorBrush x:Key="AccentPressedBrush" Color="#084A45" />
+  <SolidColorBrush x:Key="OnAccentBrush" Color="#FFFFFF" />
+
+  <!-- Status -->
+  <SolidColorBrush x:Key="SuccessBrush" Color="#166534" />
+  <SolidColorBrush x:Key="SuccessBgBrush" Color="#DCFCE7" />
+  <SolidColorBrush x:Key="WarningBrush" Color="#92400E" />
+  <SolidColorBrush x:Key="WarningBgBrush" Color="#FEF3C7" />
+  <SolidColorBrush x:Key="DangerBrush" Color="#991B1B" />
+  <SolidColorBrush x:Key="DangerBgBrush" Color="#FEE2E2" />
+  <SolidColorBrush x:Key="InfoBrush" Color="#1E40AF" />
+  <SolidColorBrush x:Key="InfoBgBrush" Color="#DBEAFE" />
+
+  <!-- Ukuran font -->
+  <x:Double x:Key="FontDisplay">32</x:Double>
+  <x:Double x:Key="FontBig">28</x:Double>
+  <x:Double x:Key="FontTitle">16</x:Double>
+  <x:Double x:Key="FontBody">14</x:Double>
+  <x:Double x:Key="FontTable">13.5</x:Double>
+  <x:Double x:Key="FontHint">12</x:Double>
+</ResourceDictionary>

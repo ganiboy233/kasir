@@ -1,0 +1,15 @@
+C:\Local Disk D\koding\kasir\src\Kasir.Data\bin\Debug\net8.0\Kasir.Data.deps.json
+C:\Local Disk D\koding\kasir\src\Kasir.Data\bin\Debug\net8.0\Kasir.Data.dll
+C:\Local Disk D\koding\kasir\src\Kasir.Data\bin\Debug\net8.0\Kasir.Data.pdb
+C:\Local Disk D\koding\kasir\src\Kasir.Data\bin\Debug\net8.0\Kasir.Core.dll
+C:\Local Disk D\koding\kasir\src\Kasir.Data\bin\Debug\net8.0\Kasir.Core.pdb
+C:\Local Disk D\koding\kasir\src\Kasir.Data\obj\Debug\net8.0\Kasir.Data.csproj.AssemblyReference.cache
+C:\Local Disk D\koding\kasir\src\Kasir.Data\obj\Debug\net8.0\Kasir.Data.GeneratedMSBuildEditorConfig.editorconfig
+C:\Local Disk D\koding\kasir\src\Kasir.Data\obj\Debug\net8.0\Kasir.Data.AssemblyInfoInputs.cache
+C:\Local Disk D\koding\kasir\src\Kasir.Data\obj\Debug\net8.0\Kasir.Data.AssemblyInfo.cs
+C:\Local Disk D\koding\kasir\src\Kasir.Data\obj\Debug\net8.0\Kasir.Data.csproj.CoreCompileInputs.cache
+C:\Local Disk D\koding\kasir\src\Kasir.Data\obj\Debug\net8.0\Kasir.Data.csproj.Up2Date
+C:\Local Disk D\koding\kasir\src\Kasir.Data\obj\Debug\net8.0\Kasir.Data.dll
+C:\Local Disk D\koding\kasir\src\Kasir.Data\obj\Debug\net8.0\refint\Kasir.Data.dll
+C:\Local Disk D\koding\kasir\src\Kasir.Data\obj\Debug\net8.0\Kasir.Data.pdb
+C:\Local Disk D\koding\kasir\src\Kasir.Data\obj\Debug\net8.0\ref\Kasir.Data.dll

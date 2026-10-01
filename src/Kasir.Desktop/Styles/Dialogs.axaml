@@ -1,0 +1,29 @@
+<Styles xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <Style Selector="Border.dialog">
+    <Setter Property="Background" Value="{DynamicResource SurfaceBrush}" />
+    <Setter Property="CornerRadius" Value="12" />
+    <Setter Property="Padding" Value="20" />
+  </Style>
+  <Style Selector="TextBlock.dialogTitle">
+    <Setter Property="FontSize" Value="16" />
+    <Setter Property="FontWeight" Value="SemiBold" />
+    <Setter Property="Foreground" Value="{DynamicResource InkBrush}" />
+  </Style>
+  <Style Selector="Border.banner">
+    <Setter Property="CornerRadius" Value="8" />
+    <Setter Property="Padding" Value="10,8" />
+  </Style>
+  <Style Selector="Border.bannerInfo">
+    <Setter Property="Background" Value="{DynamicResource InfoBgBrush}" />
+  </Style>
+  <Style Selector="Border.bannerSuccess">
+    <Setter Property="Background" Value="{DynamicResource SuccessBgBrush}" />
+  </Style>
+  <Style Selector="Border.bannerWarning">
+    <Setter Property="Background" Value="{DynamicResource WarningBgBrush}" />
+  </Style>
+  <Style Selector="Border.bannerDanger">
+    <Setter Property="Background" Value="{DynamicResource DangerBgBrush}" />
+  </Style>
+</Styles>

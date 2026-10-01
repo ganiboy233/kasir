@@ -1,0 +1,12 @@
+C:\Local Disk D\koding\kasir\src\Kasir.Core\bin\Release\net8.0\Kasir.Core.deps.json
+C:\Local Disk D\koding\kasir\src\Kasir.Core\bin\Release\net8.0\Kasir.Core.dll
+C:\Local Disk D\koding\kasir\src\Kasir.Core\bin\Release\net8.0\Kasir.Core.pdb
+C:\Local Disk D\koding\kasir\src\Kasir.Core\obj\Release\net8.0\Kasir.Core.GeneratedMSBuildEditorConfig.editorconfig
+C:\Local Disk D\koding\kasir\src\Kasir.Core\obj\Release\net8.0\Kasir.Core.AssemblyInfoInputs.cache
+C:\Local Disk D\koding\kasir\src\Kasir.Core\obj\Release\net8.0\Kasir.Core.AssemblyInfo.cs
+C:\Local Disk D\koding\kasir\src\Kasir.Core\obj\Release\net8.0\Kasir.Core.csproj.CoreCompileInputs.cache
+C:\Local Disk D\koding\kasir\src\Kasir.Core\obj\Release\net8.0\Kasir.Core.sourcelink.json
+C:\Local Disk D\koding\kasir\src\Kasir.Core\obj\Release\net8.0\Kasir.Core.dll
+C:\Local Disk D\koding\kasir\src\Kasir.Core\obj\Release\net8.0\refint\Kasir.Core.dll
+C:\Local Disk D\koding\kasir\src\Kasir.Core\obj\Release\net8.0\Kasir.Core.pdb
+C:\Local Disk D\koding\kasir\src\Kasir.Core\obj\Release\net8.0\ref\Kasir.Core.dll
